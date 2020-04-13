@@ -1,0 +1,70 @@
+extends layout
+
+block content
+ h2.page-header School Registration Form
+ p 
+ if errors
+  each error, i in errors
+   div.alert.alert-danger #{error.msg}
+ form(method='post', action='/users/register',enctype='multipart/form-data')
+  .form-group
+   label School Parent Entity
+   input.form-control(name='parententity', type='text', placeholder='School parent entity')
+  .form-group
+   label Name
+   input.form-control(name='name', type='text', placeholder='Enter Name')
+  .form-group
+   label Established Year
+   input.form-control(name='year', type='number', placeholder='Enter Year')
+  .form-group
+   label Address
+   input.form-control(name='address', type='text', placeholder='Enter Address')
+  .form-group
+   label State
+   input.form-control(name='state', type='text', placeholder='Select State')
+  .form-group
+   label District
+   input.form-control(name='district', type='text', placeholder='Select District')
+  .form-group
+   label City
+   input.form-control(name='city', type='text', placeholder='Select City')
+  .form-group
+   label PostCode
+   input.form-control(name='postcode', type='number', placeholder='Select Postal Code')
+  .form-group
+   label Brand
+   input.form-control(name='brand', type='text', placeholder='Select Brand')
+  .form-group
+   label Email
+   input.form-control(name='email', type='email', placeholder='Enter Email')
+  .form-group
+   label Principal
+   input.form-control(name='principal', type='text', placeholder='Enter Principal Name')
+  .form-group
+   label Level Serviced
+   input.form-control(name='service', type='text', placeholder='School Type')
+  .form-group
+   label Contact Person 1
+   input.form-control(name='person1', type='text', placeholder='Contact Person Name')
+  .form-group
+   label Contact Number
+   input.form-control(name='number1', type='number', placeholder='Contact Number')
+  .form-group
+   label Contact Type 1
+   input.form-control(name='type1', type='text', placeholder='Select Contact Type 1')
+  .form-group
+   label Contact Person 2
+   input.form-control(name='person2', type='text', placeholder='Contact Person Name')
+  .form-group
+   label Contact Number
+   input.form-control(name='number2', type='number', placeholder='Contact Number')
+  .form-group
+   label Contact Type 2
+   input.form-control(name='type2', type='text', placeholder='Select Contact Type 2')
+  .form-group
+   label Number of Class
+   input.form-control(name='class', type='number', placeholder='Select Classes')   
+  .form-group
+   label Board Type
+   input.form-control(name='boardtype', type='text', placeholder='Select Board Type')
+  input.btn.btn-primary(type='submit', name='submit',value='Submit')
