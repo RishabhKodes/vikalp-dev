@@ -1,21 +1,25 @@
 import React, { useState } from 'react';
 import './App.css';
+import axios from "axios"
 
 export default function App() {
 	const [email, setEmail] = useState('');
-	const [pass1, setPass1] = useState('');
-	const [dob, setDob] = useState();
+	const [password, setPass1] = useState('');
+	const [yob, setDob] = useState();
 
-	var userdata = {};
+	var newUser = {};
 	const handleSubmit = e => {
 		e.preventDefault();
 
-		userdata= {
+		newUser= {
 			email,
-			pass1,
-			dob,
+			password,
+			yob,
 		}
-		console.log(userdata);
+		console.log(newUser);
+
+		axios.post('http://localhost:8000/users/add/', newUser)
+		.then(res => console.log(res.data));
 
 		setEmail('');
 		setPass1('');
@@ -41,7 +45,7 @@ export default function App() {
 						Password
 						<input
 							type='password'
-							value={pass1}
+							value={password}
 							onChange={e => setPass1(e.target.value)}
 							required
 						/>
@@ -50,7 +54,7 @@ export default function App() {
 						Parent's Year of Birth
 						<input
 							type='text'
-							value={dob}
+							value={yob}
 							onChange={e => setDob(e.target.value)}
 							required
 						/>
