@@ -1,8 +1,9 @@
-require('./models/users.models');
+require('./models/users.parents.models');
+require('./models/users.students.models');
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
-const userRoute = require('./routes/users.parents');
+const userRoute = require('./routes/users');
 const app = express();
 var db = mongoose.connection;
 
